@@ -17,7 +17,7 @@ def get_request(endpoint):
     try:
         response = requests.get(request_url)
         return response.json()
-    except:
+    except BaseException:
         print("Network exception occurred")
 
 
@@ -37,5 +37,5 @@ def post_review(data_dict):
         response = requests.post(request_url, json=data_dict)
         print(response.json())
         return response.json()
-    except:
+    except BaseException:
         print("Network exception occurred")
